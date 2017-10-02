@@ -1,0 +1,21 @@
+<h4>welcome to the theme park!</h4>
+
+<div class="jumbotron" >
+
+      <br>
+     <% if @user.admin%>
+       ADMIN 
+       <% end %>
+      <br>
+      Name:<%=@user.name%>
+      <br>
+      Tickets:<%= @user.tickets %>
+      <br>
+      Mood: <%= @user.mood %>
+      <br>
+      Height: <%=@user.height%> inches
+      <br><br>
+          <%= link_to "Edit", "/users/update"%><br>
+          <%=link_to "See attractions ", "/attractions" %>
+          <%=link_to "Log Out", "/logout" %>
+  </div>
