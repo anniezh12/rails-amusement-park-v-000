@@ -11,21 +11,14 @@ class SessionsController < ApplicationController
 
   def create
 
+     @user = User.find_by(name: params[:user][:name])
       if params[:user][:name] == "" || params[:user][:password] ==""
         flash[:message] = "Please fill in all the fields"
         redirect_to '/sessions/new'
+      elsif @user && @user.authenticate(params[:user][:password])
+        session[:user_id] = @user.id
+        redirect_to user_path(@user)
       end
-      @user = User.find_by(name: params[:user][:name])
-      #binding.pry
-              if @user == @user.authenticate(params[:user][:password])
-
-                    session[:user_id] = @user.id
-                    redirect_to user_path(@user)
-                  else
-                    flash[:message] = "user Not found"
-                    redirect_to "/sessions/new"
-              end
-
 
    end
 

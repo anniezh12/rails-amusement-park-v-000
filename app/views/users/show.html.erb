@@ -3,13 +3,14 @@
 <div class="jumbotron" >
 
       <br>
+      <%= flash[:message] if flash[:message] %>
      <% if @user.admin%>
-       ADMIN 
+       ADMIN
        <% end %>
       <br>
-      Name:<%=@user.name%>
+      Name: <%=@user.name%>
       <br>
-      Tickets:<%= @user.tickets %>
+      Tickets: <%= @user.tickets %>
       <br>
       Mood: <%= @user.mood %>
       <br>

@@ -6,20 +6,20 @@
     <br>
 
     <label>Height Requirement(in inch)</label><br>
-    <%= f.text_field :height%>
+    <%= f.text_field :min_height%>
     <br>
 
     <label>How fun is it?(1-5 scale)</label><br>
-    <%= f.text_field :happiness%>
+    <%= f.text_field :happiness_rating%>
     <br>
 
     <label>How nausea-inducing is it?(1-5 scale)</label><br>
-    <%= f.text_field :nausea%>
+    <%= f.text_field :nausea_rating%>
     <br>
 
     <label>How many tickets does it cost?</label><br>
     <%= f.text_field :tickets%>
     <br>
 
-    <%= f.submit "Create Attraction"%>
+    <%= f.submit %>
 <% end %>
